@@ -28,10 +28,10 @@ jobs:
         if: github.ref == 'refs/heads/master'
         run: |
           ./update.sh -v "$VERSION" -t "$VERSION" -r "$GITHUB_REPOSITORY" -d "$DOCKER_REPO"
-      - name: Test images
-        run: |
-          docker images
-          ./test.sh -d "$DOCKER_REPO"
+          #      - name: Test images
+          #        run: |
+          #          docker images
+          #          ./test.sh -d "$DOCKER_REPO"
       - name: Publish images
         if: github.ref == 'refs/heads/master'
         run: |
